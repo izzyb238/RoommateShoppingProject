@@ -31,15 +31,18 @@ public class LoginActivity extends DialogFragment {
         public Dialog onCreateDialog(Bundle savedInstanceState) {
             // Create the AlertDialog view
             LayoutInflater inflater = (LayoutInflater) getActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            final View layout = inflater.inflate(R.layout.activity_login, getActivity().findViewById(R.id.root));
-
+            final View layout;
+            //= inflater.inflate(R.layout.activity_login, getActivity().findViewById(R.id.root));
 
             // get the view objects in the AlertDialog
             emailView = layout.findViewById( R.id.editTextText );
             passwordView = layout.findViewById( R.id.editTextTextPassword );
 
             // create a new AlertDialog
-            AlertDialog.Builder builder = new AlertDialog.Builder(getActivity(), R.style.AlertDialogStyle);
+            AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+            /**
+             * Original line: AlertDialog.Builder builder = new AlertDialog.Builder(getActivity(), R.style.AlertDialogStyle);
+             */
             // Set its view (inflated above).
             builder.setView(layout);
 
