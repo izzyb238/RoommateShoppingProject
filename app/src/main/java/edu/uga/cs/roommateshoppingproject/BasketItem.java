@@ -1,5 +1,9 @@
 package edu.uga.cs.roommateshoppingproject;
-
+/**
+* local basket for individual roommate, when "checkout"
+* is completed, items are marked as purchased and
+ * the price will be split during calculation
+ **/
 public class BasketItem {
 
     private String id;

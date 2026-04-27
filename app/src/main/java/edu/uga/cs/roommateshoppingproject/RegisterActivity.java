@@ -1,7 +1,10 @@
 package edu.uga.cs.roommateshoppingproject;
 
+import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import android.content.Intent;
@@ -36,19 +39,17 @@ public class RegisterActivity extends AppCompatActivity {
             return insets;
         });
 
-        //update these to refer to the objects in the xml files
-        //emailEditText = findViewById(R.id.[editText]);
-        //passwordEditText = findViewById(R.id.[editText]);
+        emailEditText = findViewById(R.id.editText);
+        passwordEditText = findViewById(R.id.editText5);
 
-        Button registerButton;
-                //= findViewById(R.id.[button]);
+        Button registerButton = findViewById(R.id.button3);
         registerButton.setOnClickListener( new RegisterButtonClickListener() );
     }
 
     private class RegisterButtonClickListener implements View.OnClickListener {
         public void onClick (View view) {
             final String email = emailEditText.getText().toString();
-            final String password = passworEditText.getText().toString();
+            final String password = passwordEditText.getText().toString();
 
             final FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
 

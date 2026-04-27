@@ -1,15 +1,16 @@
 package edu.uga.cs.roommateshoppingproject;
 
-import android.app.AlertDialog;
 import android.app.Dialog;
-import android.app.DialogFragment;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.widget.EditText;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
+import androidx.fragment.app.DialogFragment;
 
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -30,12 +31,12 @@ public class LoginActivity extends DialogFragment {
         public Dialog onCreateDialog(Bundle savedInstanceState) {
             // Create the AlertDialog view
             LayoutInflater inflater = (LayoutInflater) getActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            //final View layout = inflater.inflate(R.layout.signin_dialog, getActivity().findViewById(R.id.root));
+            final View layout = inflater.inflate(R.layout.activity_login, getActivity().findViewById(R.id.root));
 
 
             // get the view objects in the AlertDialog
-            //emailView = layout.findViewById( R.id.editTextText );
-            //passwordView = layout.findViewById( R.id.editTextTextPassword );
+            emailView = layout.findViewById( R.id.editTextText );
+            passwordView = layout.findViewById( R.id.editTextTextPassword );
 
             // create a new AlertDialog
             AlertDialog.Builder builder = new AlertDialog.Builder(getActivity(), R.style.AlertDialogStyle);
